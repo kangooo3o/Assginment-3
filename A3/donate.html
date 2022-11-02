@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Donate now page -->
+  <title>Donate Now</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/logo.png" alt="">
+        <p>Alley cat Allies</p>
+      </a>
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="active"><a href="donate.html">Donate Now</a></li>
+      </ul>
+    </div>
+  </header>
+  <section class="donate">
+    <div class="title">Save cates now</div>
+    <div class="content">
+      <div class="letter">
+        <h2>Help Answer The Call For Cats In Need</h2>
+        <p>All of our Cat Help Desk work is possible because of your support, so please give as generously as you can
+          right now. In so many communities, cats desperately need help — and every dollar you give will make sure we
+          can answer another call to help save them.</p>
+        <h2>Make a Lifesaving gift today!</h2>
+        <p>if you'd like to mak a donation to Alley Cat Allies in honor or memor of a loved one,please urs our Tribute
+          donation form.</p>
+      </div>
+      <div class="pic"><img src="img/cat02.jpg"></div>
+    </div>
+    <div class="form">
+      <h3>Tpgether,we can Save Then All!</h3>
+      <form action="" method="post" onsubmit="return submitcode()">
+        <ul>
+          <li><label>$6000 <input type="radio" value="6000" name="price"></label></li>
+          <li><label>$3000 <input type="radio" value="3000" name="price"></label></li>
+          <li><label>$1000 <input type="radio" value="1000" name="price"></label></li>
+          <li><label>$500 <input type="radio" value="500" name="price"></label></li>
+        </ul>
+        <div class="input"><input type="text" class="text" name="other" placeholder="other">
+          <p>$</p>
+        </div>
+        <div class="button"><button type="submit" @click="">DONATE</button></div>
+      </form>
+      <h1>Thanks For Your Donation</h1>
+    </div>
+  </section>
+  <div class="error"></div>
+  <footer class="footer">
+    <div class="log"><img src="img/logo.png" alt="logo"> Alley Cat Allies</div>
+    <p>© 2022 Alley Cat Allies. All rights reserved. Alley Cat Allies is a 501(c)3 organization.</p>
+  </footer>
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+  </script>
+  <script type="text/javascript">
+    $('.donate li').click(function () {
+      $(this).addClass('on').siblings().removeClass('on');
+    });
+    function submitcode() {
+      if (!$('input[name=price]:checked').val() && $('input[name=other]').val() == '') {
+        $('.error').html('Please select a fee').show(function () {
+          setTimeout(() => {
+            $('.error').hide();
+          }, 2000)
+        });
+        return false;
+      }
+
+      $('.error').html('thank you for your donation').show(function () {
+        setTimeout(() => {
+          $('.error').hide();
+        }, 2000);
+      });
+
+
+      return false
+    }
+  </script>
+</body>
+
+</html>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+  }
+
+  a {
+    text-decoration: none;
+    color: #666;
+  }
+
+
+  body {
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+  }
+
+  ul,
+  li {
+    list-style-type: none;
+  }
+
+  .header {
+    width: 1200px;
+    height: auto;
+    overflow: hidden;
+    padding: 20px 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+
+  .header .logo img {
+    height: 90px;
+  }
+
+  .header .logo a {
+    display: flex;
+    align-items: center;
+  }
+
+  .header .logo p {
+    font-size: 33px;
+    color: #000;
+    padding-left: 10px;
+  }
+
+  .header .menu ul {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+  }
+
+  .header .menu ul li {
+    padding-left: 50px;
+  }
+
+  .header .menu ul li a {
+    font-size: 26px;
+  }
+
+  .header .menu ul li a:hover {
+    color: #000;
+  }
+
+  .header .menu ul li.active a {
+    color: #000;
+  }
+
+
+
+  .footer {
+    width: 1200px;
+    height: auto;
+    overflow: hidden;
+    background: #e0e0e0;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  .footer .log {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+  }
+
+  .footer .log img {
+    height: 60px;
+    padding-right: 15px;
+  }
+
+  .footer p {
+    padding-top: 20px;
+  }
+
+  .location {
+    width: 1200px;
+    height: auto;
+    overflow: hidden;
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+    margin: 0 auto;
+    color: #ee9948;
+    font-size: 26px;
+  }
+
+  .projects {
+    width: 1200px;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 30px 0;
+  }
+
+  .projects .content {
+    line-height: 1.8;
+    font-size: 26px;
+  }
+
+  .projects .list {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .projects .list ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .projects .list ul li {
+    background: #f0a65e;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 30px;
+    margin-top: 40px;
+  }
+
+  .projects .list ul li .img {
+    height: 326px;
+    overflow: hidden;
+  }
+
+  .projects .list ul li img {
+    display: block;
+    border-radius: 15px;
+    transition: all 0.4s;
+  }
+
+  .projects .list ul li:hover img {
+    transform: scale(1.2);
+  }
+
+  .projects .list ul li p {
+    color: #fff;
+    padding: 25px 0;
+    font-size: 30px;
+  }
+
+  .projects .list ul li a {
+    display: inline-block;
+    width: 230px;
+    height: 68px;
+    border-radius: 5px;
+    line-height: 68px;
+    background: #fff;
+    font-size: 30px;
+    color: #f0a65e;
+  }
+
+  .projects .list ul li a:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  }
+
+  .article {
+    width: 1200px;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .article .body {
+    padding: 40px 0;
+  }
+
+  .article .body h3 {
+    color: #f0a65e;
+    margin: 15px 0 10px;
+    font-size: 24px;
+  }
+
+  .article .body p {
+    font-size: 18px;
+    line-height: 1.8;
+    padding-bottom: 20px;
+  }
+
+  .article .body p b {
+    color: #f0a65e;
+  }
+
+  .about {
+    width: 1200px;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    z-index: -2;
+    background: url(../img/about.jpg) no-repeat left top;
+    background-size: 100% auto;
+    margin: 0 auto;
+  }
+
+  .about::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .about .location {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .about .default {
+    padding: 30px;
+  }
+
+  .about .default h3 {
+    font-size: 20px;
+    color: #f0a65e;
+    margin: 15px 0 10px;
+  }
+
+  .about .default p {
+    line-height: 1.8;
+    color: #333;
+    padding-bottom: 20px;
+  }
+
+  .donate {
+    width: 1200px;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .donate .title {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 30px 0;
+    font-size: 40px;
+    background: #f0a65e;
+    text-indent: 20px;
+    color: #fff;
+  }
+
+  .donate .content {
+    padding: 40px 0 80px;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .donate .content .letter {
+    width: 650px;
+    float: left;
+  }
+
+  .donate .content .letter h2 {
+    font-size: 30px;
+    color: #f0a65e;
+    padding: 30px 0 10px;
+  }
+
+  .donate .content .letter p {
+    line-height: 1.8;
+  }
+
+  .donate .content .pic {
+    width: 500px;
+    float: right;
+  }
+
+  .donate .content .pic img {
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .donate .form h3 {
+    font-size: 24px;
+    text-align: center;
+    color: #f0a65e;
+    margin-bottom: 40px;
+
+  }
+
+  .donate .form form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .donate .form form ul {
+    display: flex;
+  }
+
+  .donate .form form ul li {
+    margin: 0 15px;
+  }
+
+  .donate .form form ul li label input {
+    width: 0px;
+    height: 0px;
+  }
+
+  .donate .form form ul li label {
+    display: block;
+    width: 145px;
+    height: 65px;
+    font-size: 25px;
+    color: #f0a65e;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    line-height: 65px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .donate .form form ul li.on label {
+    border: 1px solid #f0a65e;
+  }
+
+  .donate .form form .input {
+    margin-top: 30px;
+    position: relative;
+  }
+
+  .donate .form form .input .text {
+    width: 668px;
+    height: 65px;
+    border-radius: 8px;
+    line-height: 65px;
+    text-align: center;
+    border: 1px solid #ccc;
+    font-size: 25px;
+    color: #f0a65e;
+  }
+
+  .donate .form form .input .text::placeholder {
+    color: #f0a65e;
+  }
+
+  .donate .form form .input p {
+    font-size: 25px;
+    color: #f0a65e;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+  }
+
+  .donate .form form .button {
+    padding-top: 50px;
+  }
+
+  .donate .form form .button button {
+    width: 325px;
+    height: 65px;
+    background: #f0a65e;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 30px;
+  }
+
+  .donate .form h1 {
+    text-align: center;
+    color: #f0a65e;
+    font-size: 50px;
+    padding: 100px 0;
+  }
+
+  .error {
+    width: auto;
+    height: auto;
+    padding: 40px 80px;
+    display: none;
+    font-size: 30px;
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(240, 166, 94, 0.5);
+  }
+</style>

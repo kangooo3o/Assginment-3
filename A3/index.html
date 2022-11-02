@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Home</title>
+</head>
+
+<body>
+  <!-- 头部 -->
+  <header class="header">
+    <!-- 左边图标内容 -->
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/logo.png" alt="logo">
+        <p>Alley cat Allies</p>
+      </a>
+    </div>
+    <!-- 右侧导航栏 -->
+    <div class="menu">
+      <ul>
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="donate.html">Donate Now</a></li>
+      </ul>
+    </div>
+  </header>
+  <!-- banner -->
+  <div class="banner">
+    <p>Save and<br />Protect Cats<br /> and Kittens !</p>
+  </div>
+
+  <section class="section">
+    <div class="content">
+      <p>With Alley cat Allies, you’re working to </p>
+      <p>- Reforming Public Policies About Cats</p>
+      <p>- Saving the Lives of Cats in Shelters</p>
+      <p>- Changing Attitudes Toward Cats</p>
+    </div>
+
+    <div class="h2">
+      <h2>Give a lifesaving today.</h2>
+      <div class="price">
+        <ul>
+          <li><a href="###">$100</a></li>
+          <li><a href="###">$50</a></li>
+          <li><a href="###">$25</a></li>
+          <li><a href="javascript:;" class="donate">Donate</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="h3">
+      <ul>
+        <li>
+          <img src="img/cat03.jpg" alt="browncat">
+          <div class="cat-box">
+            <h2>NEED ADVICE ABOUT CATS?</h2>
+            <p>Gice advice about cats at any time online, with our interactive form.</p>
+            <a href="#">Read more</a>
+          </div>
+        </li>
+        <li>
+          <img src="img/cat01.jpg" alt="greycat">
+          <div class="cat-box">
+            <h2>CAT CARE GUIDE</h2>
+            <p>Are you a cat colony caregiver? Do you know what to do if you find kittens?</p>
+            <a href="#">Read more</a>
+          </div>
+        </li>
+        <li>
+          <img src="img/cat04.jpg" alt="illness cat">
+          <div class="cat-box">
+            <h2>WHAT DO IF YOU FIND A CAT OUTDOORS?</h2>
+            <p>The answer depends on the car! Cats can have unique needs based on many factors…</p>
+            <a href="#">Read more</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="order">
+      <div class="wrap">
+        <div class="pic"><img src="img/white.jpg" alt="whitecat"></div>
+        <div class="letter">
+          <h2><img src="img/logo.png" alt="logo">Alley Cat Allies
+        </div>
+        <div class="letter">
+          <h3>Help Answer The Call For Cats In Need</h3>
+          <p>All of our Cat Help Desk work is possible</p>
+          <p>because of your support,so please give</p>
+          <p>as generously as you can right now. In so many communities,</p>
+          <p>cats desperately need help -</p>
+          <p>and every dollar you give will make sure</p>
+          <p>we can answer another call to help save them.</p>
+        </div>
+      </div>
+      <div class="data">
+        <h2>Donation</h2>
+        <ul>
+          <li><a href="#" onclick="setCurrent()">$100</a></li>
+          <li><a href="#" onclick="setCurrent()">$50</a></li>
+          <li><a href="#" onclick="setCurrent()">$20</a></li>
+        </ul>
+        <div class="btn" onclick="closeDonate()"><a href=" #">DONATE</a></div>
+      </div>
+      <div class="close"><a href="javascript:;">×</a></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="log"><img src="img/logo.png" alt="logo"> Alley Cat Allies</div>
+    <p>© 2022 Alley Cat Allies. All rights reserved. Alley Cat Allies is a 501(c)3 organization.</p>
+  </footer>
+  <div class="toast">成功</div>
+  <script type="text/javascript">
+    var donate = document.querySelector('.donate');
+    var containerObj = document.querySelector('.container');
+    var closeObj = document.querySelector('.close');
+    donate.onclick = function () {
+      containerObj.style.display = 'block';
+    }
+
+    closeObj.onclick = function () {
+      containerObj.style.display = 'none';
+    }
+    function closeDonate() {
+
+      containerObj.style.display = 'none';
+      document.querySelector('.toast').style.display = 'block'
+
+      setTimeout(function () {
+        document.querySelector('.toast').style.display = 'none'
+
+      }, 2000)
+
+    }
+    function setCurrent() {
+      let a = document.querySelectorAll('.data a')
+      for (let i = 0; i < a.length; i++) {
+        console.log(a[i]);
+        a[i].className = ""
+      }
+      event.target.className = "current"
+
+    }
+  </script>
+</body>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+  }
+
+  a {
+    text-decoration: none;
+    color: #666;
+  }
+
+  ul,
+  li {
+    list-style-type: none;
+  }
+
+  body {
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+  }
+
+  .header {
+    width: 1200px;
+
+    height: auto;
+    overflow: hidden;
+    padding: 20px 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header .logo a {
+    display: flex;
+    align-items: center;
+  }
+
+  .header .logo img {
+    height: 90px;
+  }
+
+  .header .logo p {
+    font-size: 33px;
+    color: #000;
+    padding-left: 10px;
+  }
+
+  .header .menu ul {
+    display: flex;
+    align-items: center;
+  }
+
+  .header .menu ul li {
+    padding-left: 50px;
+  }
+
+  .header .menu ul li a {
+    font-size: 26px;
+  }
+
+  .header .menu ul li a:hover {
+    color: #000;
+  }
+
+  .header .menu ul li.active a {
+    color: #000;
+  }
+
+  .banner {
+    width: 1200px;
+    height: 630px;
+    background: url(./img/cat03.jpg)no-repeat center center;
+    background-size: 1200px 675px;
+    margin: 0 auto;
+  }
+
+  .banner p {
+    font-size: 73px;
+    color: #fff;
+    line-height: 2.1;
+    padding: 90px 0 0 50px;
+  }
+
+  .lm {
+    width: 100%;
+    height: 675px;
+    overflow: hidden;
+    background: url(../img/cat02.jpg) no-repeat center top;
+    position: relative;
+  }
+
+  .lm h2 {
+    position: absolute;
+    bottom: 50px;
+    width: 60%;
+    padding: 25px 0;
+    background: #f0a65e;
+    font-size: 40px;
+    color: #fff;
+    text-indent: 1em;
+  }
+
+  .section {
+    width: 1200px;
+
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .section .content {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background: #f0a65e;
+    padding: 20px 0;
+    margin: 40px 0;
+    border-radius: 8px;
+  }
+
+  .section .content p {
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .section .h2 {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .section .h2 h2 {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .section .h2 ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 45px 45px 60px;
+  }
+
+  .section .h2 ul li a {
+    display: block;
+    width: 170px;
+    height: 85px;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 85px;
+    font-size: 35px;
+    color: #f0a65e;
+  }
+
+
+  .section .h2 ul li a:hover {
+    border: 1px solid #f0a65e;
+
+  }
+
+  .section .h2 ul li:last-child a {
+    width: 275px;
+    background: #f0a65e;
+    border: 1px solid #f0a65e;
+    color: #fff;
+  }
+
+  .section .h2 ul li:last-child a:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .section .h3 {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .section .h3 ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .section .h3 ul li img {
+    width: 380px;
+    display: block;
+  }
+
+  .section .h3 ul li .cat-box {
+    width: 340px;
+    height: 200px;
+    overflow: hidden;
+    background: #fff;
+    margin: 0 auto;
+    padding: 16px 20px;
+    position: relative;
+    top: -40px;
+  }
+
+  .section .h3 ul li .cat-box h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    height: 60px;
+  }
+
+  .section .h3 ul li .cat-box p {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .section .h3 ul li .cat-box a {
+    display: block;
+    margin-top: 20px;
+    color: #f0a65e;
+    font-size: 20px;
+  }
+
+  .container {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+
+  .order {
+    width: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+  }
+
+  .order .wrap {
+    width: 600px;
+    height: auto;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .order .wrap .pic img {
+    width: 100%;
+    height: 300px;
+    border-radius: 20px;
+  }
+
+  .order .wrap .letter {
+    padding: 5px 25px;
+  }
+
+  .order .wrap h2 {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+  }
+
+  .order .wrap h2 img {
+    height: 60px;
+    margin-right: 15px;
+  }
+
+  .order .wrap h3 {
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+
+  .order .wrap p {
+    line-height: 1.8;
+    font-weight: 500;
+  }
+
+  .order .data {
+    width: 400px;
+    height: auto;
+    background: #fff;
+    border-radius: 20px;
+    margin-left: 40px;
+  }
+
+  .order .data h2 {
+    font-size: 30px;
+    text-align: center;
+    color: #f0a65e;
+    padding: 110px 0;
+  }
+
+  .order .data ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  .order .data ul li a {
+    display: block;
+    width: 110px;
+    height: 50px;
+    margin: 0 7px;
+    line-height: 50px;
+    color: #f0a65e;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .order .data .btn {
+    margin-top: 100px;
+  }
+
+  .order .data .btn a {
+    display: block;
+    width: 325px;
+    height: 70px;
+    font-size: 20px;
+    background: #f0a65e;
+    line-height: 70px;
+    text-align: center;
+    border-radius: 10px;
+    color: #fff;
+    margin: 0 auto;
+  }
+
+  .order .close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    z-index: 9999;
+
+  }
+
+  .order .close a {
+    display: block;
+    width: 35px;
+    height: 35px;
+    font-size: 30px;
+    border: 2px solid #fff;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    border-radius: 5px;
+  }
+
+  .order .close a:hover {
+    background: #f0a65e;
+    color: #fff;
+  }
+
+  .footer {
+    width: 1200px;
+
+    height: auto;
+    overflow: hidden;
+    background: #e0e0e0;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  .footer .log {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+  }
+
+  .footer .log img {
+    height: 60px;
+    padding-right: 15px;
+  }
+
+  .footer p {
+    padding-top: 20px;
+  }
+
+  .location {
+    width: 1200px;
+    height: auto;
+    overflow: hidden;
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+    margin: 0 auto;
+    color: #ee9948;
+    font-size: 26px;
+  }
+
+  .projects {
+    width: 1200px;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 30px 0;
+  }
+
+  .projects .descript {
+    line-height: 1.8;
+    font-size: 26px;
+  }
+
+  .projects .list {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .projects .list ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .projects .list ul li {
+    background: #f0a65e;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 30px;
+    margin-top: 40px;
+  }
+
+  .projects .list ul li .img {
+    height: 326px;
+    overflow: hidden;
+  }
+
+  .projects .list ul li img {
+    display: block;
+    border-radius: 15px;
+    transition: all 0.4s;
+  }
+
+  .projects .list ul li:hover img {
+    transform: scale(1.2);
+  }
+
+  .projects .list ul li p {
+    color: #fff;
+    padding: 25px 0;
+    font-size: 30px;
+  }
+
+  .projects .list ul li a {
+    display: inline-block;
+    width: 230px;
+    height: 68px;
+    border-radius: 5px;
+    line-height: 68px;
+    background: #fff;
+    font-size: 30px;
+    color: #f0a65e;
+  }
+
+  .projects .list ul li a:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  }
+
+  .article {
+    width: 1200px;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .article .body {
+    padding: 40px 0;
+  }
+
+  .article .body h3 {
+    color: #f0a65e;
+    margin: 15px 0 10px;
+    font-size: 24px;
+  }
+
+  .article .body p {
+    font-size: 18px;
+    line-height: 1.8;
+    padding-bottom: 20px;
+  }
+
+  .article .body p b {
+    color: #f0a65e;
+  }
+
+  .about {
+    width: 1200px;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    z-index: -2;
+    background: url(../img/about.jpg) no-repeat left top;
+    background-size: 100% auto;
+    margin: 0 auto;
+  }
+
+  .about::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .about .location {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .about .default {
+    padding: 30px;
+  }
+
+  .about .default h3 {
+    font-size: 20px;
+    color: #f0a65e;
+    margin: 15px 0 10px;
+  }
+
+  .about .default p {
+    line-height: 1.8;
+    color: #333;
+    padding-bottom: 20px;
+  }
+
+  .donate {
+    width: 1200px;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .donate .dbt {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 30px 0;
+    font-size: 40px;
+    background: #f0a65e;
+    text-indent: 20px;
+    color: #fff;
+  }
+
+  .donate .descript {
+    padding: 40px 0 80px;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .donate .descript .letter {
+    width: 650px;
+    float: left;
+  }
+
+  .donate .descript .letter h2 {
+    font-size: 30px;
+    color: #f0a65e;
+    padding: 30px 0 10px;
+  }
+
+  .donate .descript .letter p {
+    line-height: 1.8;
+  }
+
+  .donate .descript .pic {
+    width: 500px;
+    float: right;
+  }
+
+  .donate .descript .pic img {
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .donate .form form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .donate .form form ul {
+    display: flex;
+  }
+
+  .donate .form form ul li {
+    margin: 0 15px;
+  }
+
+  .donate .form form ul li label input {
+    width: 0px;
+    height: 0px;
+  }
+
+  .donate .form form ul li label {
+    display: block;
+    width: 145px;
+    height: 65px;
+    font-size: 25px;
+    color: #f0a65e;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    line-height: 65px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .donate .form form ul li.on label {
+    border: 1px solid #f0a65e;
+  }
+
+  .donate .form form .input {
+    margin-top: 30px;
+    position: relative;
+  }
+
+  .donate .form form .input .text {
+    width: 668px;
+    height: 65px;
+    border-radius: 8px;
+    line-height: 65px;
+    text-align: center;
+    border: 1px solid #ccc;
+    font-size: 25px;
+    color: #f0a65e;
+  }
+
+  .donate .form form .input .text::placeholder {
+    color: #f0a65e;
+  }
+
+  .donate .form form .input p {
+    font-size: 25px;
+    color: #f0a65e;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+  }
+
+  .donate .form form .button {
+    padding-top: 50px;
+  }
+
+  .donate .form form .button button {
+    width: 325px;
+    height: 65px;
+    background: #f0a65e;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 30px;
+  }
+
+  .donate .form content {
+    text-align: center;
+    color: #f0a65e;
+    font-size: 50px;
+    padding: 100px 0;
+  }
+
+  .error {
+    width: auto;
+    height: auto;
+    padding: 40px 80px;
+    display: none;
+    font-size: 30px;
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(240, 166, 94, 0.5);
+  }
+
+  .current {
+    border: 1px solid #ee9948 !important;
+  }
+
+  .toast {
+    width: auto;
+    height: auto;
+    padding: 40px 80px;
+    display: none;
+    font-size: 30px;
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(240, 166, 94, 0.5);
+  }
+</style>
+
+</html>
